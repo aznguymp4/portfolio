@@ -1,3 +1,11 @@
+#navBar {
+  display: flex;
+  gap: 16px;
+}
+
 .profile-dropdown {
   position: absolute;
+}
+#themeToggle:hover {
+  cursor: pointer;
 }

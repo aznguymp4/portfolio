@@ -1,0 +1,100 @@
+:root{
+	--cycleDelayTime: 2s;
+}
+@media only screen and (max-width: 675px) {
+	#hi{
+		width: 100%;
+		padding-left: 0% !important;
+		padding-right: 0% !important;
+		padding: 10px 0 70px 0 !important;
+		text-align: center;
+	}
+	#name{
+		margin-bottom: 26px !important;
+	}
+	#roles{
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.role{
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	.roleIcon{
+		width: 38px !important;
+	}
+	#mobile::before{
+		content: "\a";
+		white-space: pre;
+	}
+}
+@keyframes roleCycle {
+	0%, 30%, 66%, 100% {
+		opacity: 0%;
+		transform: translateY(10px);
+		filter: blur(3px);
+	}
+	33%, 63% {
+		transform: translateY(-2px);
+		opacity: 100%;
+	}
+	35%, 63% {
+		filter: blur(0px);
+		transform: translateY(0px);
+	}
+}
+
+.prevent-select {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+#bg {
+	position: absolute;
+	top: 0px;
+	width: 100vw;
+	z-index: -1;
+	filter: blur(3px);
+}
+
+#hi {
+	padding: 40px 0 100px 15.5%;
+}
+
+#name {
+	margin-bottom: 5px;
+}
+
+#waveEmoji {
+	vertical-align: middle;
+	width: 50px;
+	margin: 0 10px 10px 10px;
+	cursor: grab;
+}
+
+.role {
+	font-size: larger;
+	margin: 0 6px 0 16px;
+	line-height: 0px;
+	animation-iteration-count: infinite;
+	animation-name: roleCycle;
+	animation-duration: calc(3*var(--cycleDelayTime));
+	opacity: 0%;
+	height: 0px;
+	width: fit-content;
+}
+.role > span {
+	margin-left: 16px;
+}
+.role:nth-child(1) { animation-delay: calc(-4*var(--cycleDelayTime)); }
+.role:nth-child(2) { animation-delay: calc(-3*var(--cycleDelayTime)); }
+.role:nth-child(3) { animation-delay: calc(-2*var(--cycleDelayTime)); }
+
+.roleIcon {
+	width: 36px;
+	/* border: solid green 1px; */
+	filter: drop-shadow(1.5px 1.5px 3px #00000044);
+	vertical-align: middle;
+}
