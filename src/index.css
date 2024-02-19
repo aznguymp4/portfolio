@@ -1,15 +1,17 @@
 @import url(./font.css);
+@import url(./color.css);
 
-[data-theme="dark"] {
-  --colBg: #282828;
-  --colTxt: #e9e9e9;
-}
-[data-theme="light"] {
-  --colBg: #f6f6f6;
-  --colTxt: #252525;
+:root {
+  --bezierBounceOut: cubic-bezier(0,.7,.3,1.5);
+  --bezierQuartOut: cubic-bezier(0,.75,.25,1);
+  --bezierQuartIn: cubic-bezier(.75,0,1,.25);
+  --bezierQuartInOut: cubic-bezier(.75,0,.25,1);
 }
 
 body {
-  background-color: var(--colBg);
-  color: var(--colTxt);
+  background-color: var(--background-50);
+  color: var(--text-900);
+  transition-property: background-color, color;
+  transition-duration: .3s;
+  transition-timing-function: ease-out;
 }
