@@ -19,7 +19,7 @@ const HelloHeader = () => {
 				whileTap=        {{ scale: .9, rotate: 13, translate: "8% -3%", cursor: "grabbing" }}
 				dragConstraints= {{ left: 0, right: 0, top: 0, bottom: 0 }}
 				dragTransition=  {{ bounceStiffness: 700, bounceDamping: 25 }}
-				dragElastic=     {.05}
+				dragElastic=     {.005}
 				drag
 			/>
 			<span id="mobile"></span>
@@ -32,7 +32,7 @@ const HelloHeader = () => {
 			</div>
 			<div className="role prevent-select">
 				<img draggable="false" alt="YouTube Logo" src='./icon/yt.svg' className="roleIcon prevent-select"/>
-				<span>a content creator.</span>
+				<span>a former content creator.</span>
 			</div>
 			<div className="role prevent-select">
 				<img draggable="false" alt="Icon of a 3D Cube" src='./icon/game.webp' className="roleIcon prevent-select"/>
@@ -58,7 +58,7 @@ Technologies
 	Framer Motion
 	Sequelize
 	Express
-	Canvas
+	HTML Canvas
 	jQuery
 	React
 	Redux
