@@ -1,6 +1,7 @@
 import './HomePage.css'
 import HelloHeader from '../HelloHeader'
 import Projects from '../Projects'
+import Skills from '../Skills'
 import Quote from './Quote'
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
 		<HelloHeader/>
 		<Quote/>
 		<Projects/>
+		<Skills/>
 	</>
 }
 
