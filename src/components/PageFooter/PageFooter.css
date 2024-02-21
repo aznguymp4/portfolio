@@ -1,0 +1,14 @@
+#pageFooter {
+	background: linear-gradient(0deg, var(--background-50) 0%, var(--background-100) 100%);
+	padding: 48px;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+#socials {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 8px;
+	gap: 8px;
+}

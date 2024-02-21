@@ -4,7 +4,7 @@ import Layout from './Layout';
 
 export const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: <Layout/>,
     children: [
       {
         path: "/",
