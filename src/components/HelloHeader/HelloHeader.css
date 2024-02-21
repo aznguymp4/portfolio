@@ -1,7 +1,4 @@
-:root{
-	--cycleDelayTime: 2s;
-}
-@media only screen and (max-width: 675px) {
+@media screen and (max-width: 800px) {
 	#hi{
 		width: 100%;
 		padding-left: 0% !important;
@@ -20,6 +17,7 @@
 	.role{
 		margin-left: auto !important;
 		margin-right: auto !important;
+		font-size: 16px !important;
 	}
 	.roleIcon{
 		width: 38px !important;
@@ -29,26 +27,55 @@
 		white-space: pre;
 	}
 }
+@media screen and (max-width: 880px) {
+	#headshot {
+		display: none;
+	}
+	#name {
+		font-size: 28px;
+	}
+	.role {
+		font-size: 18px !important;
+	}
+}
 @keyframes roleCycle {
 	0%, 30%, 66%, 100% {
 		opacity: 0%;
 		transform: translateY(10px);
-		filter: blur(3px);
+		/* Blur is too laggy on Safari :( */
+		/* filter: blur(3px); */
 	}
 	33%, 63% {
-		transform: translateY(-2px);
 		opacity: 100%;
+		transform: translateY(-2px);
 	}
 	35%, 63% {
-		filter: blur(0px);
+		transform: translateY(0px);
+		/* filter: blur(0px); */
+	}
+}
+@keyframes headIn {
+	0% {
+		opacity: 0;
+		/* filter: blur(6px); */
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		/* filter: blur(0px); */
 		transform: translateY(0px);
 	}
 }
-
-.prevent-select {
-	-webkit-user-select: none; /* Safari */
-	-ms-user-select: none; /* IE 10 and IE 11 */
-	user-select: none; /* Standard syntax */
+:root{
+	--cycleDelayTime: 2s;
+}
+#helloHeader {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 40px;
+	gap: 32px;
+	margin: auto;
+	max-width: var(--contentMaxWidth);
 }
 
 #bg {
@@ -60,11 +87,12 @@
 }
 
 #hi {
-	padding: 40px 0 100px 15.5%;
+	padding: 0 0 70px;
+	margin: auto 0;
 }
 
 #name {
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 }
 
 #waveEmoji {
@@ -94,7 +122,19 @@
 
 .roleIcon {
 	width: 36px;
-	/* border: solid green 1px; */
 	filter: drop-shadow(1.5px 1.5px 3px #00000044);
 	vertical-align: middle;
+}
+#headshot > img {
+	width: 30vw;
+	height: 300px;
+	object-fit: contain;
+	max-width: 400px;
+	opacity: 0;
+}
+#headshot > img.loaded {
+	animation-name: headIn;
+	animation-duration: 1s;
+	animation-timing-function: var(--bezierQuartOut);
+	animation-fill-mode: forwards;
 }

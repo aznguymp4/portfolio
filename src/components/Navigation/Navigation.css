@@ -1,6 +1,9 @@
 #navBar {
   display: flex;
   gap: 16px;
+  padding: 16px;
+  margin: auto;
+  justify-content: space-between;
 }
 
 .profile-dropdown {

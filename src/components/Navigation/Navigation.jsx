@@ -17,8 +17,8 @@ const Navigation = () => {
   },[d, dispatch])
 
   return <div id="navBar">
-    <NavLink to="/"><b>Home</b></NavLink>
-    <ToggleSwitch state={d} setState={setD} label={<i className={`fas fa-${dark?'moo':'su'}n fa-xl`}/>}/>
+    <NavLink to="/"><i className="fa-solid fa-house fa-xl"/></NavLink>
+    <ToggleSwitch state={d} setState={setD} label={<i style={{width:'25px'}} className={`fas fa-${dark?'moon fa-flip-horizontal':'sun'} fa-xl`}/>}/>
     {/* {<div onClick={()=>dispatch(setTheme(!dark))} id="themeToggle">
       <i className={`fas fa-${dark?'moo':'su'}n fa-xl`}/> {dark?'Dark':'Light'} Theme
     </div>} */}

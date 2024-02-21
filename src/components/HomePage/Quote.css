@@ -1,0 +1,11 @@
+#CCCquote {
+  display: grid;
+  justify-content: center;
+  margin: 40px 0 110px;
+}
+#CCCquote > img {
+  max-height: 120px;
+  grid-row: 1;
+  grid-column: 1;
+  transition: .3s opacity ease-out;
+}

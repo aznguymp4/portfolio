@@ -1,0 +1,3 @@
+.gifv::-webkit-media-controls {
+  display: none;
+}
