@@ -1,0 +1,38 @@
+.skillWindow {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.skillIcons {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 40px);
+	justify-content: space-between;
+	gap: 10px;
+	overflow-x: scroll;
+	padding: 0 20px 20px;
+}
+.skillIcons > i {
+	font-size: 24px;
+	color: var(--accent-800);
+	background-color: var(--background-100);
+	padding: 8px;
+	border-radius: 8px;
+	transition-timing-function: var(--bezierQuartOut);
+}
+.skillIcons > i:hover {
+	color: var(--background-100);
+	background-color: var(--accent-700);
+	cursor: pointer;
+}
+.skillIcons > i.selected {
+	color: var(--background-100);
+	background-color: var(--accent-900);
+}
+.skillWindowTitle {
+	line-height: 12px;
+	margin: auto auto auto 12px;
+}
+.skillWindowOpen {
+	line-height: 0;
+	margin: auto 0 auto auto;
+}

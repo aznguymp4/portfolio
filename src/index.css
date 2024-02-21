@@ -17,7 +17,7 @@
   transition: none !important;
 }
 .themeApplicable {
-  transition-property: background-color, color, border-color, stop-color;
+  transition-property: background-color, color, border-color;
   transition-duration: .3s;
   transition-timing-function: ease-out;
 }

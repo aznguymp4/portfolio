@@ -3,19 +3,33 @@
 	--maxProjectWindowHeight: 512px;
 	--projectWindowTileSize: 256px;
 }
+@media screen and (max-width: 880px) {
+	.projects {
+		margin: 15px 15px 64px!important;
+	}
+}
+@media screen and (max-width: 800px) {
+	.projectTab {
+		scale: .85
+	}
+	.projectWindowLList {
+		padding: 4px !important;
+	}
+}
+
 .projects {
-	margin: 32px;
+	margin: 32px 32px 64px;
 }
 .projectWindow {
 	background-color: var(--background-200);
 	border: 1px solid var(--background-300);
 	border-radius: 10px;
 	overflow: hidden;
-	box-shadow: 0 4px 16px #22222266;
+	box-shadow: 0 4px 32px var(--text-200);
 	margin: auto;
 	transition-property: background-color, border-color !important;
 	max-width: var(--maxProjectWindowWidth);
-	max-height: var(--maxProjectWindowHeight);
+	height: var(--maxProjectWindowHeight);
 	display: flex;
 }
 .projectWindowL {
@@ -62,8 +76,10 @@
 	padding: 10px;
 	overflow-y: scroll;
 	max-height: calc(var(--maxProjectWindowHeight) - 73px);
+	transition: padding 1s var(--bezierQuartOut);
 }
 .projectTab {
+	transition: scale 1s var(--bezierQuartOut);
 	border-radius: 5px;
 	font-size: 14px;
 	line-height: 10px;
@@ -119,4 +135,5 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
+	background-color: #00000027;
 }
