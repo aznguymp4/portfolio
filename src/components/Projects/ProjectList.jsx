@@ -1,8 +1,9 @@
 const ProjectList = [
   {
     name: 'Pinteract',
+    dir: 'Pinteract',
     url: 'https://pinteract.onrender.com',
-    icon: 'icon.png',
+    icon: 'icon.svg',
     iconBg: '#ed4245',
     imgs: [
       {
@@ -29,7 +30,8 @@ const ProjectList = [
         src: 'boardedit.mp4',
         vid: 'video/mp4',
         alt: 'Pinteract Board Editing',
-        desc: 'Demonstration of removing Pins from Boards.'
+        desc: 'Demonstration of removing Pins from Boards.',
+        thumbTime: 4.33124
       },
     ],
     desc: <div>
@@ -38,6 +40,7 @@ const ProjectList = [
   },
   {
     name: 'Dissscord',
+    dir: 'Dissscord',
     url: 'https://dissscord.onrender.com',
     icon: 'icon.svg',
     iconBg: '#5865f2',
@@ -51,13 +54,15 @@ const ProjectList = [
         src: 'liveTypingDemo.mp4',
         vid: 'video/mp4',
         alt: 'Dissscord Live Messaging Demo',
-        desc: 'Demonstration of real-time messaging, typing, and reactions in Dissscord.'
+        desc: 'Demonstration of real-time messaging, typing, and reactions in Dissscord.',
+        thumbTime: 11.268832 
       },
       {
         src: 'serverCreateDemo.mp4',
         vid: 'video/mp4',
         alt: 'Dissscord Server Create Demo',
-        desc: 'Demonstration of how to create a server in Dissscord.'
+        desc: 'Demonstration of how to create a server in Dissscord.',
+        thumbTime: 5.566547
       },
       {
         src: 'serverInfo.jpeg',
@@ -82,7 +87,106 @@ const ProjectList = [
     </div>
   },
   {
+    name: 'Find the Hats!',
+    dir: 'FindTheHats',
+    url: 'https://www.roblox.com/games/9524312968/--',
+    icon: 'icon.svg',
+    iconLarge: 'icon.jpeg',
+    iconBg: '#06ceff',
+    actionTxt: 'PLAY',
+    imgs: [
+      {
+        src: 'isometricMapView.jpg',
+        alt: 'Welcome to Find the Hats!',
+        desc: 'Find the Hats! is a scavenger hunt game with a ton of content to explore!'
+      },
+      {
+        src: 'hatGetDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'Find the Hats! - Getting Hats',
+        desc: 'Demonstration video of finding a new hat. There\'s tons of them all over this world!',
+        thumbTime: 2.280965
+      },
+      {
+        src: 'hatEquipDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'Find the Hats! - Equipping Hats',
+        desc: 'Demonstration video of equipping hats. You can wear up to 20 hats at once!',
+        thumbTime: 7.147984
+      },
+      {
+        src: 'itemShopDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'Find the Hats! - Buying and equipping shop items',
+        desc: 'Demonstration video of buying items. There\'s so many cool items! :D',
+        thumbTime: 1.435039
+      },
+    ],
+    desc: <div>
+      Adventurous scavenger hunt game on the Roblox platform with 300k+ visits.
+      Smooth and high quality assets, models, and UI all built from scratch.
+      Developed as a team of three members.
+    </div>
+  },
+  {
+    name: 'Tetroblox',
+    dir: 'Tetroblox',
+    url: 'https://www.roblox.com/games/6795867689/--',
+    icon: 'icon.svg',
+    iconLarge: 'icon.jpeg',
+    iconBg: '#cd66fa',
+    actionTxt: 'PLAY',
+    imgs: [
+      {
+        src: 'Thumbnail2.jpeg',
+        alt: 'Tetroblox Singleplayer',
+        desc: 'Players can choose 5 singleplayer gamemodes.'
+      },
+      {
+        src: 'SprintPlay.mp4',
+        vid: 'video/mp4',
+        alt: 'Tetroblox Sprint Play',
+        desc: <>Demonstration of Sprint, a singleplayer mode. <span className="s100">(Video not sped up)</span></>,
+        thumbTime: 17.187573
+      },
+      {
+        src: 'Thumbnail3.jpeg',
+        alt: 'Tetroblox Multiplayer',
+        desc: 'Players can create custom multiplayer rooms and play with others in real-time.'
+      },
+      {
+        src: 'Thumbnail4.jpeg',
+        alt: 'Tetroblox Large Multiplayer Room',
+        desc: 'There\'s no theoretical player limit in a Tetroblox multiplayer room!'
+      },
+      // {
+      //   src: 'Thumbnail1.jpeg',
+      //   alt: 'Tetroblox Icon',
+      //   desc: 'Official icon used for Tetroblox'
+      // },
+      {
+        src: 'Thumbnail5.jpg',
+        alt: 'Tetroblox Sprint Sample Image',
+        desc: <>Sprint is a mode where you clear 40 lines as <i>fast</i> as you can.</>
+      },
+      {
+        src: 'Thumbnail6.jpg',
+        alt: 'Tetroblox Combo Race Sample Image',
+        desc: 'Combo Race is a mode where you aim for the highest line-clear combo in under 30 seconds.'
+      },
+      {
+        src: 'Thumbnail7.jpg',
+        alt: 'Tetroblox Large Multiplayer Room Sample Image #2',
+        desc: 'So many players in one room!'
+      },
+    ],
+    desc: <div>
+      An online stacker puzzle game in the Tetris genre on the Roblox platform with 1M+ plays. Supports live-multiplayer and singleplayer. Polished UI with responsive graphics and visual effects. Mobile supported.
+    </div>
+  },
+  {
     name: 'LiquidBnB',
+    dir: 'LiquidBnB',
     url: 'https://liquidbnb.onrender.com',
     icon: 'icon.svg',
     iconBg: '#ff5a5f',
@@ -107,6 +211,62 @@ const ProjectList = [
       Full-stack clone of AirBnB built indepentently in just two weeks.
       Clean and polished UI, uses React/Redux for fast dynamic page changes, and secure backend validation for user input.
     </div>
+  },
+  {
+    name: 'aznbot.mp4',
+    dir: 'aznbotmp4',
+    url: 'https://aznguy.com/invite',
+    icon: 'oyesvg_white.svg',
+    iconLarge: 'oyesvg.svg',
+    iconBg: '#FFDB7B',
+    actionTxt: 'INVITE',
+    imgs: [
+      {
+        src: '2048demo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 Games - /2048',
+        desc: 'Play 2048 in Discord!',
+        thumbTime: 44.745616
+      },
+      {
+        src: 'helpDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 - /help',
+        desc: 'Demonstration of /help, a command that displays all usable commands.',
+        thumbTime: 11.734
+      },
+      {
+        src: 'tetrisDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 Games - /tetris',
+        desc: 'Play Modern Tetris in Discord!',
+        thumbTime: 21.441908
+      },
+      {
+        src: 'ticTacToeDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 Multiplayer Games - /tictactoe',
+        desc: 'Play Tic-Tac-Toe with another user in Discord in real-time!',
+        thumbTime: 10
+      },
+      {
+        src: 'rpsDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 Multiplayer Games - /rps',
+        desc: 'Play Rock Paper Scissors with another user in Discord in real-time!',
+        thumbTime: 4
+      },
+      {
+        src: 'wordleDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'aznbot.mp4 Games - /wordle',
+        desc: 'Play Wordle! A word game that gives you six attempts to guess the word.',
+        thumbTime: 8
+      },
+    ],
+    desc: <div>
+      Multi-purpose Discord bot with commands ranging from moderation to multiplayer games. 100% built independently.
+    </div>
   }
-]
+].sort(()=>Math.random()-.5)
 export default ProjectList

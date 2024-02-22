@@ -30,8 +30,8 @@ const PreviewWindow = ({ proj, img, setImgSel, loaded, setLoaded }) => {
   },[close, loaded])
 
   const image = img.vid
-  ? <GifV onLoad={load} key={img.key} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-  : <img onLoad={load} key={img.key} src={`./projects/${proj.name}/${img.src}`}/>
+  ? <GifV onLoad={load} key={img.key} src={`./projects/${proj.dir}/${img.src}`} type={img.vid} unmute={true}/>
+  : <img onLoad={load} key={img.key} src={`./projects/${proj.dir}/${img.src}`}/>
 
   return <OutsideAlerter onOutsideClick={close}>
     <div

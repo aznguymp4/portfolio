@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux'
 import './GifV.css'
 
 // A <video/> that behaves as a gif (because .mp4 file sizes are much smaller and better quality) 
-const GifV = ({src, type, onClick, onLoad}) => {
+const GifV = ({src, type, onClick, onLoad, unmute, thumbTime}) => {
 	const vidRef = useRef()
 	const focus = useSelector(s=>s.options.focus)
 	useEffect(()=>{
 		const vid = vidRef?.current
 		if(!vid) return
-		vid.currentTime=0
+		vid.currentTime=thumbTime||0
+		vid.volume=unmute?.25:0
 		if(focus) vid.play()
 		else vid.pause()
 	}, [focus])
@@ -17,9 +18,9 @@ const GifV = ({src, type, onClick, onLoad}) => {
   return <video
 		className='gifv'
 		autoPlay
-		controls=''
+		controls={unmute}
 		loop
-		muted
+		muted={!unmute}
 		ref={vidRef}
 		playsInline // Disables auto fullscreen on iOS
 		onClick={onClick}

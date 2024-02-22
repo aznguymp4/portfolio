@@ -6,11 +6,13 @@ import GifV from '../GifV'
 import ProjectList from './ProjectList'
 import PreviewWindow from './PreviewWindow'
 import { motion as m } from 'framer-motion'
+import OutsideAlerter from '../util/OutsideAlerter'
 
 const Projects = () => {
 	const [projIdx, setProjIdx] = useState(0)
 	const [imgSel, setImgSel] = useState(null)
 	const [imgSelLoaded, setImgSelLoaded] = useState(false)
+	const [rTabsOpen, setRTabsOpen] = useState(false)
 	const focus = useSelector(s=>s.options.focus)
 	const proj = ProjectList[projIdx]
 
@@ -27,15 +29,16 @@ const Projects = () => {
 	</>
 
 	const tabs = ProjectList.map((p,i) => <div
-		className={`projectTab trim ${projIdx===i?'selected':''}`}
+		className={`projectTab ${projIdx===i?'selected':''}`}
 		onClick={()=>{
 			setImgSel(null)
 			setProjIdx(i)
+			setRTabsOpen(false)
 		}}
 		key={i}
 	>
-		<div className='projectTabIcon'><img key={'icon'+i} src={`./projects/${p.name}/${p.icon}`}/></div>
-		<div className='projectTabName'>{p.name}</div>
+		<div className='projectTabIcon'><img key={'icon'+i} src={`./projects/${p.dir}/${p.icon}`}/></div>
+		<div className='projectTabName s100 w500'>{p.name}</div>
 	</div>)
 
 	return <div className="projects">
@@ -48,14 +51,26 @@ const Projects = () => {
 				<div className='projectWindowLList noScrollBar'>{tabs}</div>
 			</div>
 			<div className='projectWindowR'>
-				<div className='projectWindowRTop wsemibold'>
-					<div className='projectWindowLTop'>
-						{macBtns}
+				<OutsideAlerter onOutsideClick={()=>setRTabsOpen(false)}>
+					<div className='projectWindowRTop wsemibold'>
+						<div className='projectWindowLTop'>
+							{macBtns}
+						</div>
+						<div className='mav ac projectWindowRTabBtn' onClick={()=>setRTabsOpen(v=>!v)}>
+							<i className={`ma fa-solid fa-${rTabsOpen?'xmark':'bars'} ct950`}/>
+						</div>
+						<div>Projects</div>
+						{imgSel && !imgSelLoaded && <div className='ca700 ar projectWindowRTopLoad'><i className="fa-solid fa-gear fa-spin fa-lg"/></div>}
 					</div>
-					<div>{proj.name}</div>
-					{imgSel && !imgSelLoaded && <div className='ca700 ar projectWindowRTopLoad'><i className="fa-solid fa-gear fa-spin fa-lg"/></div>}
-				</div>
-				<div className='projectWindowRTabs'>{tabs}</div>
+					{rTabsOpen && <m.div
+						className='projectWindowRTabs'
+						initial={{y:-48, scaleY: 0}}
+						animate={{y:0, scaleY: 1}}
+						transition={{duration: .2, ease: 'backOut'}}
+					>
+						{tabs}
+					</m.div>}
+				</OutsideAlerter>
 				<div className='projectWindowRBody macScrollBar'>{
 					<>
 						<div className='projectWindowBodyInfo'>
@@ -70,14 +85,14 @@ const Projects = () => {
 									hidden: { opacity: 0, x: -15 }
 								}}
 							>
-								<div className='projectInfoIcon' style={{backgroundColor: proj.iconBg}}>
-									<img key={'icon'+projIdx} src={`./projects/${proj.name}/${proj.icon}`}/>
+								<div className={`projectInfoIcon ${proj.iconLarge?'iconLarge':''}`} style={{backgroundColor: proj.iconLarge? null : proj.iconBg}}>
+									<img key={'icon'+projIdx} src={`./projects/${proj.dir}/${proj.iconLarge || proj.icon}`}/>
 								</div>
 								<div className='projectInfoText'>
-									<div className='s500 wbold'>{proj.name}</div>
+									<div className='s500 wbold' style={{width:'max-content'}}>{proj.name}</div>
 									<div className='projectInfoOpenBtn'>
 										<Link to={proj.url} target='_blank' rel='noopener noreferrer' className='s200 w700'>
-											OPEN
+											{proj.actionTxt || 'OPEN'}
 										</Link>
 										<i style={{marginLeft:'8px'}} className="fa-solid ct600 fa-arrow-up-right-from-square fa-xs"/>
 									</div>
@@ -102,8 +117,8 @@ const Projects = () => {
 
 							return <div key={key} className='projectImg'>{
 								img.vid
-								? <GifV onClick={e=>selImg(e, img, key)}  key={key} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-								: <img onClick={e=>selImg(e, img, key)} loading='lazy'  key={key} src={`./projects/${proj.name}/${img.src}`}/>
+								? <GifV onClick={e=>selImg(e, img, key)}  key={key} src={`./projects/${proj.dir}/${img.src}`} type={img.vid} thumbTime={img.thumbTime}/>
+								: <img onClick={e=>selImg(e, img, key)} loading='lazy'  key={key} src={`./projects/${proj.dir}/${img.src}`}/>
 							}</div>
 						})}
 					</>

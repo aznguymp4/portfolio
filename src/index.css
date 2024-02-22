@@ -53,11 +53,6 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-.macScrollBar {
-  scrollbar-gutter: stable;
-  /* scrollbar-color: var(--text-700) var(--text-100); */
-  /* scrollbar-width: thin; */
-}
 .macScrollBar::-webkit-scrollbar {
   width: 16px;
   background-color: #00000000;
