@@ -1,0 +1,26 @@
+.btn {
+  background-color: var(--primary-600);
+  color: white;
+  text-shadow: 0 0 8px #00000066;
+  font-weight: 600;
+  text-align: center;
+  width: max-content;
+  border: unset;
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition-duration: .3s;
+  transition-property: transform, background-color;
+  transition-timing-function: var(--bezierQuartOut);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.btn:not([disabled],.disabled):hover        { background-color: var(--primary-700); transform: translateY(-1px); cursor: pointer; }
+.btn:not([disabled],.disabled):active       { background-color: var(--primary-500); transform: translateY(1px) scale(.975); }
+
+/* Button Colors */
+.btn.bInvert                                   { background-color: var(--secondary-900); color: var(--text-100); }
+.btn.bInvert:not([disabled],.disabled):hover   { background-color: var(--secondary-800); }
+.btn.bInvert:not([disabled],.disabled):active  { background-color: var(--secondary-700); }
+
+/* Must be assigned last */
+.btn[disabled], .btn.disabled { background-color: var(--text-200); color: gray; cursor: not-allowed; }

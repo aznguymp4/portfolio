@@ -35,6 +35,14 @@
 	.role {
 		font-size: 18px !important;
 	}
+	#headerContactBtns {
+		justify-content: center;
+		grid-auto-flow: row !important;
+	}
+	#headerExtraSocials {
+		justify-content: center;
+		padding: 8px 0 !important;
+	}
 }
 @keyframes roleCycle {
 	0%, 30%, 66%, 100% {
@@ -90,7 +98,7 @@
 }
 
 #name {
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 }
 
 #waveEmoji {
@@ -99,7 +107,6 @@
 	margin: 0 10px 10px 10px;
 	cursor: grab;
 }
-
 .role {
 	font-size: larger;
 	margin: 0 6px 0 16px;
@@ -135,4 +142,19 @@
 	animation-duration: 1s;
 	animation-timing-function: var(--bezierQuartOut);
 	animation-fill-mode: forwards;
+}
+#headerContactBtns {
+	margin-top: 100px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 165px;
+	gap: 14px;
+}
+#headerExtraSocials {
+	display: flex;
+	gap: 8px;
+	padding: 16px 0;
+}
+#hi a {
+	text-decoration: none;
 }
