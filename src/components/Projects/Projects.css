@@ -21,10 +21,10 @@
 		display: flex !important;
 	}
 	.projectWindowRTabs {
-		display: flex !important;
+		display: grid !important;
 	}
-	.projectWindowRBody {
-		max-height: calc(var(--maxProjectWindowHeight) - 122px) !important;
+	.projectWindowRTabBtn {
+		display: unset !important;
 	}
 }
 @media screen and (max-width: 480px) {
@@ -33,6 +33,9 @@
 	}
 	.projectWindowBodyInfo {
 		grid-column: unset !important;
+	}
+	.projectTabName {
+		display: none;
 	}
 }
 
@@ -107,10 +110,34 @@
 	max-height: calc(var(--maxProjectWindowHeight) - 73px);
 	transition: padding 1s var(--bezierQuartOut);
 }
+.projectWindowRTabBtn {
+	display: none;
+	padding: 0 4px;
+	margin-right: 15px;
+	line-height: 20px;
+	transform: scale(1.5);
+	border-radius: 5px;
+	font-size: 9px;
+	background-color: var(--background-300);
+	transition: background-color .2s var(--bezierQuartOut);
+	aspect-ratio: 1;
+	width: 12px;
+}
+.projectWindowRTabBtn:hover {
+	background-color: var(--background-400);
+	cursor: pointer;
+}
+.projectWindowRTabBtn:active {
+	background-color: var(--background-100);
+}
 .projectWindowRTabs {
 	display: none;
 	flex-direction: row;
+	grid-template-columns: 1fr 1fr;
 	gap: 1px;
+	background-color: var(--background-50);
+	position:absolute;
+	width: calc(100% - 48px);
 }
 .projectWindowRTabs > .projectTab {
 	flex-grow: 1;
@@ -118,7 +145,6 @@
 	transition: .2s var(--bezierQuartOut) background-color;
 	font-size: 12px;
 	justify-content: center;
-	box-shadow: 0 -1px 0 var(--background-50);
 }
 .projectWindowLList > .projectTab {
 	border-radius: 5px;
@@ -140,7 +166,7 @@
 	background-color: var(--background-300);
 }
 .projectWindowRTabs > .projectTab.selected {
-	background-color: var(--projectWindowTopBar);
+	background-color: var(--background-300);
 	box-shadow: none
 }
 .projectWindowRTabs > .projectTab:not(.selected):hover {
@@ -161,6 +187,7 @@
 }
 .projectTabName {
 	margin: auto 0;
+	width: max-content;
 }
 .projectWindowR {
 	flex-grow: 1;
@@ -197,13 +224,22 @@
 	gap: 16px;
 }
 .projectInfoIcon {
-	padding: 14px;
-	border-radius: 16px;
-	transition: background-color .2s ease-out;
 	box-shadow: 0 4px 16px #00000066;
 	aspect-ratio: 1;
-	height: 40px;
 	display: flex;
+	border-radius: 16px;
+	max-width: 68px;
+	max-height: 68px;
+}
+.projectInfoIcon:not(.iconLarge) {
+	padding: 14px;
+	width: 40px;
+	height: 40px;
+}
+.projectInfoIcon.iconLarge > img {
+	width: 68px;
+	height: 68px;
+	border-radius: 16px;
 }
 .projectInfoIcon > img {
 	width: 40px;

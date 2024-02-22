@@ -40,20 +40,23 @@ const Navigation = () => {
     dispatch(setTheme(d))
   },[d, dispatch])
 
-  return <div id='navBar'>
-    <m.div initial={{x:-25, opacity:0}} animate={animateEnd} transition={transition}>
-      <NavLink to='/'><i className='fa-solid fa-house fa-xl'/></NavLink>
-    </m.div>
-    <m.div initial={{x:25, opacity:0}} animate={animateEnd} transition={transition}>
-      <ToggleSwitch
-        state={d}
-        setState={setD}
-        label={<i style={{width:'25px'}}
-        className={`fa-solid fa-${dark?'moon fa-flip-horizontal':'sun'} fa-xl`}/>}
-        debounce={true}
-      />
-    </m.div>
-  </div>
+  return <>
+    <div id='navBar'>
+      <m.div initial={{x:-25, opacity:0}} animate={animateEnd} transition={transition}>
+        <NavLink to='/'><i className='fa-solid fa-house fa-xl'/></NavLink>
+      </m.div>
+      <m.div initial={{x:25, opacity:0}} animate={animateEnd} transition={transition}>
+        <ToggleSwitch
+          state={d}
+          setState={setD}
+          label={<i style={{width:'25px'}}
+          className={`fa-solid fa-${dark?'moon fa-flip-horizontal':'sun'} fa-xl`}/>}
+          debounce={true}
+        />
+      </m.div>
+    </div>
+    <div style={{height: '64px'}}/>
+  </>
 }
 
 export default Navigation;
