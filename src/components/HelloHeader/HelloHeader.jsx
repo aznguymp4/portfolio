@@ -6,13 +6,12 @@ const HelloHeader = () => {
 	const aaa = {y:0, opacity: 1}
 
 	return <div id='helloHeader'>
-		<div id='hi' className='themeApplicable'>
+		<div id='hi' className=''>
 			<div id='name'>
 				<div className='s400 w500 ct700'>
 					<m.div
 						initial={INitial}
 						animate={aaa}
-						className='themeApplicable'
 					>
 						Hey!
 						<m.img

@@ -16,11 +16,11 @@ const Projects = () => {
 	}
 
 	return <div className="projects">
-		<div className='ac s500 wbold ca700 themeApplicable'>Projects</div>
-		<div className='ac s300 w500 ct700 themeApplicable'>Check out my work!</div>
+		<div className='ac s500 wbold ca700'>Projects</div>
+		<div className='ac s300 w500 ct700'>Check out my work!</div>
 		<br/>
-		<div className='projectWindow themeApplicable noDrag noSelect'>
-			<div className='projectWindowL themeApplicable'>
+		<div className='projectWindow noDrag noSelect'>
+			<div className='projectWindowL'>
 				<div className={`projectWindowLTop ${focus?'':'disabled'}`}>
 					<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-xmark"/></div>
 					<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-minus"/></div>
@@ -28,14 +28,14 @@ const Projects = () => {
 				</div>
 				<div className='projectWindowLList noScrollBar'>{
 					ProjectList.map((p,i) => <div
-						className={`projectTab themeApplicable ${projIdx===i?'selected':''}`}
+						className={`projectTab ${projIdx===i?'selected':''}`}
 						onClick={()=>{
 							setImgSel(null)
 							setProjIdx(i)
 						}}
 						key={i}
 					>
-						<div className='projectTabIcon'><img className='themeApplicable' src={`./projects/${p.name}/${p.icon}`}/></div>
+						<div className='projectTabIcon'><img className='' src={`./projects/${p.name}/${p.icon}`}/></div>
 						<div className='projectTabName'>{p.name}</div>
 					</div>)
 				}</div>

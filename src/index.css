@@ -1,5 +1,5 @@
 @import url(./font.css);
-@import url(./color.css);
+/* @import url(./color.css); */
 
 :root {
   --bezierBounceOut: cubic-bezier(0,.7,.3,1.5);
@@ -11,18 +11,18 @@
 
   --contentMaxWidth: 1100px
 }
-.deferTransition *, .deferTransition {
+/* .deferTransition *, .deferTransition {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -ms-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
-}
-.themeApplicable {
+} */
+/* .themeApplicable {
   transition-property: background-color, color, border-color;
   transition-duration: 7s;
   transition-timing-function: ease-out;
-}
+} */
 a {
   color: var(--accent-700);
   text-decoration: none;
