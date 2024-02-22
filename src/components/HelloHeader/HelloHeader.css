@@ -26,8 +26,6 @@
 		content: "\a";
 		white-space: pre;
 	}
-}
-@media screen and (max-width: 880px) {
 	#headshot {
 		display: none;
 	}
@@ -97,7 +95,7 @@
 
 #waveEmoji {
 	vertical-align: middle;
-	width: 50px;
+	width: 40px;
 	margin: 0 10px 10px 10px;
 	cursor: grab;
 }

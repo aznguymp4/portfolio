@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import './GifV.css'
 
 // A <video/> that behaves as a gif (because .mp4 file sizes are much smaller and better quality) 
-const GifV = ({src, type}) => {
+const GifV = ({src, type, onClick, onLoad}) => {
 	const vidRef = useRef()
 	const focus = useSelector(s=>s.options.focus)
 	useEffect(()=>{
@@ -22,8 +22,13 @@ const GifV = ({src, type}) => {
 		muted
 		ref={vidRef}
 		playsInline // Disables auto fullscreen on iOS
+		onClick={onClick}
+		onLoadStart={onLoad && (()=>{setInterval(()=>{onLoad()},30)})}
 	>
-		<source type={type} src={src}/>
+		<source
+			type={type}
+			src={src}
+		/>
 		Your browser does not support the video tag.
 	</video>
 }

@@ -6,6 +6,8 @@
   --bezierQuartOut: cubic-bezier(0,.75,.25,1);
   --bezierQuartIn: cubic-bezier(.75,0,1,.25);
   --bezierQuartInOut: cubic-bezier(.75,0,.25,1);
+  
+  --bezierWholeOut: cubic-bezier(0,1,0,1);
 
   --contentMaxWidth: 1100px
 }

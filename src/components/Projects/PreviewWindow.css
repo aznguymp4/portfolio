@@ -1,0 +1,54 @@
+@keyframes previewPopup {
+  0% {
+    /* scale: .25; */
+    transform: scale(0) translate(-50%, -50%);
+  }
+  100% {
+    /* scale: 1; */
+    transform: scale(1) translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.previewWindow {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  max-width: var(--contentMaxWidth);
+  background-color: var(--text-200);
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--text-400);
+  border-radius: 10px;
+	box-shadow: 0 4px 40px #111111cc;
+  display: none;
+  transform-origin: top left;
+}
+.previewWindow.loaded {
+  display: unset;
+  animation-name: previewPopup;
+  animation-duration: .575s;
+  animation-timing-function: var(--bezierWholeOut);
+  animation-fill-mode: forwards;
+}
+.previewWindowTop {
+  display: flex;
+  height: 36px;
+}
+.previewWindowTopBtn {
+  width: 11px;
+	height: 11px;
+	border-radius: 6px;
+	font-size: 9.2px;
+  text-align: center;
+	background-color: var(--text-400);
+  border: .5px solid  var(--text-400);
+  color: var(--text-950);
+}
+.previewWindowBody > img, .previewWindowBody > video {
+  max-width: calc(85vw);
+  max-height: calc(60vh);
+  object-fit: contain;
+  border-radius: 5px;
+}

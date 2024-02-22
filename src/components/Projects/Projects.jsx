@@ -3,11 +3,17 @@ import { useSelector } from 'react-redux'
 import './Projects.css'
 import GifV from '../GifV'
 import ProjectList from './ProjectList'
+import PreviewWindow from './PreviewWindow'
 
 const Projects = () => {
 	const [projIdx, setProjIdx] = useState(0)
+	const [imgSel, setImgSel] = useState(null)
 	const focus = useSelector(s=>s.options.focus)
 	const proj = ProjectList[projIdx]
+
+	const selImg = (e, img) => {
+		setImgSel({...img, bounds: e.target.getBoundingClientRect()})
+	}
 
 	return <div className="projects themeApplicable">
 		<div className='ac s500 wbold ca700'>Projects</div>
@@ -23,7 +29,10 @@ const Projects = () => {
 				<div className='projectWindowLList noScrollBar'>{
 					ProjectList.map((p,i) => <div
 						className={`projectTab ${projIdx===i?'selected':''}`}
-						onClick={()=>setProjIdx(i)}
+						onClick={()=>{
+							setImgSel(null)
+							setProjIdx(i)
+						}}
 						key={i}
 					>
 						<div className='projectTabIcon'><img className='themeApplicable' src={`./projects/${p.name}/${p.icon}`}/></div>
@@ -36,13 +45,15 @@ const Projects = () => {
 				<div className='projectWindowRBody'>{
 					proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
 							img.vid
-							? <GifV src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-							: <img src={`./projects/${proj.name}/${img.src}`}/>
+							? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
+							: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
 						}</div>
 					)
 				}</div>
 			</div>
 		</div>
+		
+		{imgSel && <PreviewWindow proj={proj} img={imgSel} setImgSel={setImgSel}/>}
 	</div>
 }
 
