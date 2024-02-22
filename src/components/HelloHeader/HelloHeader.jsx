@@ -1,5 +1,6 @@
 import { motion as m } from 'framer-motion';
 import './HelloHeader.css'
+import { Link } from 'react-router-dom';
 
 const HelloHeader = () => {
 	const INitial = {y:-20, opacity: 0}
@@ -60,6 +61,28 @@ const HelloHeader = () => {
 					<img draggable='false' alt='YouTube Logo' src='./icon/yt.svg' className='roleIcon noSelect noDrag'/>
 					<span>a former content creator.</span>
 				</div>
+			</m.div>
+			<m.div
+				id='headerContactBtns'
+				initial={INitial}
+				animate={aaa}
+				transition={{delay: window.homePageINterval*3}}
+			>
+				<Link to='mailto:mail@aznguy.com' target='_blank' rel='noopener noreferrer'>
+					<div className='btn'><i className="fa-solid fa-envelope"/> Get in Touch</div>
+				</Link>
+				<Link className='mav' to='https://docs.google.com/document/d/1eI5BVMny8-gmsmz8bVjm4aPngrAUwL432XSDlX34tdc/view' target='_blank' rel='noopener noreferrer'>
+					<div className='wsemibold o80'><i className="fa-solid fa-file-lines"/> Résumé</div>
+				</Link>
+			</m.div>
+			<m.div
+				id='headerExtraSocials'
+				initial={INitial}
+				animate={aaa}
+				transition={{delay: window.homePageINterval*4}}
+			>
+				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My GitHub' to='https://github.com/aznguymp4'><i className='fa-brands fa-github fa-lg'/></Link>
+				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My LinkedIn' to='https://www.linkedin.com/in/erich-nguyen-716145228/'><i className='fa-brands fa-linkedin fa-lg'/></Link>
 			</m.div>
 		</div>
 		<div id='headshot'>

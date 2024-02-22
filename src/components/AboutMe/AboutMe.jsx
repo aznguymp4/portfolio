@@ -8,7 +8,7 @@ const AboutMe = () => {
 				Ever since I was young, I&apos;ve always had curiosity and a great understanding with technology.
 				I&apos;ve been doing web development since 2019, and am always thinking about efficiency, modularity, and minimizing repetition when writing code.
 			</div>
-			<i className='fa-solid fa-code s700 ma ct200'/>
+			<i className='aboutMeDevIcon fa-solid fa-code s700 ma ct200'/>
 		</div>
 	</div>
 }

@@ -1,21 +1,28 @@
+import { Link } from 'react-router-dom'
+import { motion as m } from 'framer-motion'
 import './PageFooter.css'
 
 const PageFooter = () => {
-	return <div id='pageFooter' className='ac'>
+	return <m.div
+		id='pageFooter' 
+		className='ac'
+		initial={{opacity: 0}}
+		animate={{opacity: 1}}
+	>
 		<div id='pageFooterTop'>
 			<div id='socials'>
-				<a target='_blank' rel='noopener noreferrer' title='Contact Me' href='mailto:mail@aznguy.com'><i className='fa-solid fa-envelope'/></a>
-				<a target='_blank' rel='noopener noreferrer' title='My GitHub' href='https://github.com/aznguymp4'><i className='fa-brands fa-github'/></a>
-				<a target='_blank' rel='noopener noreferrer' title='My LinkedIn' href='https://www.linkedin.com/in/erich-nguyen-716145228/'><i className='fa-brands fa-linkedin'/></a>
-				{/* <a target='_blank' rel='noopener noreferrer' title='My Twitter' href='https://x.com/aznguymp4'><i className='fa-brands fa-x-twitter'/></a> */}
-				<a target='_blank' rel='noopener noreferrer' title='My Résumé' href='https://docs.google.com/document/d/1eI5BVMny8-gmsmz8bVjm4aPngrAUwL432XSDlX34tdc/view'><i className='fa-solid fa-file-lines fa-sm'/></a>
-				<a target='_blank' rel='noopener noreferrer' title='This site&apos;s Source Code' href='https://github.com/aznguymp4/portfolio'><i className='fa-solid fa-code'/></a>
+				<Link target='_blank' rel='noopener noreferrer' title='Contact Me' to='mailto:mail@aznguy.com'><i className='fa-solid fa-envelope'/></Link>
+				<Link target='_blank' rel='noopener noreferrer' title='My GitHub' to='https://github.com/aznguymp4'><i className='fa-brands fa-github'/></Link>
+				<Link target='_blank' rel='noopener noreferrer' title='My LinkedIn' to='https://www.linkedin.com/in/erich-nguyen-716145228/'><i className='fa-brands fa-linkedin'/></Link>
+				{/* <Link target='_blank' rel='noopener noreferrer' title='My Twitter' to='https://x.com/aznguymp4'><i className='fa-brands fa-x-twitter'/></Link> */}
+				<Link target='_blank' rel='noopener noreferrer' title='My Résumé' to='https://docs.google.com/document/d/1eI5BVMny8-gmsmz8bVjm4aPngrAUwL432XSDlX34tdc/view'><i className='fa-solid fa-file-lines fa-sm'/></Link>
+				<Link target='_blank' rel='noopener noreferrer' title='This site&apos;s Source Code' to='https://github.com/aznguymp4/portfolio'><i className='fa-solid fa-code'/></Link>
 			</div>
 		</div>
 		<div id='pageFooterBottom' className='s200 w500 ct800'>
 			<div>© {new Date().getUTCFullYear()}, Erich Nguyen</div>
 		</div>
-	</div>
+	</m.div>
 }
 
 export default PageFooter

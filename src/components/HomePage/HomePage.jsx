@@ -6,7 +6,7 @@ import Quote from './Quote'
 import AboutMe from '../AboutMe'
 import { motion as m } from 'framer-motion'
 
-window.homePageINterval = .150
+window.homePageINterval = .125
 
 const HomePage = () => {
 	const [initial, animate] = [

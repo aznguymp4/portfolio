@@ -1,7 +1,10 @@
 @import url(./font.css);
+@import url(./btn.css);
 /* @import url(./color.css); */
 
 :root {
+  overflow-x: hidden;
+
   --bezierBounceOut: cubic-bezier(0,.7,.3,1.5);
   --bezierQuartOut: cubic-bezier(0,.75,.25,1);
   --bezierQuartIn: cubic-bezier(.75,0,1,.25);
@@ -17,14 +20,20 @@
 a {
   color: var(--accent-700);
   text-decoration: none;
+  transition: .25s var(--bezierQuartOut) color;
 }
 a:hover {
   text-decoration: underline;
+  color: var(--accent-800);
+}
+a:active {
+  color: var(--accent-600);
 }
 
 body {
   background-color: var(--background-75);
   color: var(--text-900);
+  overflow-x: hidden;
 }
 .noSelect, .noSelect *, br {
 	-webkit-user-select: none; /* Safari */
