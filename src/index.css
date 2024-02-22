@@ -20,7 +20,7 @@
 }
 .themeApplicable {
   transition-property: background-color, color, border-color;
-  transition-duration: .3s;
+  transition-duration: 7s;
   transition-timing-function: ease-out;
 }
 a {

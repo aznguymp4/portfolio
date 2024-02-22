@@ -15,9 +15,9 @@ const Projects = () => {
 		setImgSel({...img, bounds: e.target.getBoundingClientRect()})
 	}
 
-	return <div className="projects themeApplicable">
-		<div className='ac s500 wbold ca700'>Projects</div>
-		<div className='ac s300 w500 ct700'>Check out my work!</div>
+	return <div className="projects">
+		<div className='ac s500 wbold ca700 themeApplicable'>Projects</div>
+		<div className='ac s300 w500 ct700 themeApplicable'>Check out my work!</div>
 		<br/>
 		<div className='projectWindow themeApplicable noDrag noSelect'>
 			<div className='projectWindowL themeApplicable'>
@@ -28,7 +28,7 @@ const Projects = () => {
 				</div>
 				<div className='projectWindowLList noScrollBar'>{
 					ProjectList.map((p,i) => <div
-						className={`projectTab ${projIdx===i?'selected':''}`}
+						className={`projectTab themeApplicable ${projIdx===i?'selected':''}`}
 						onClick={()=>{
 							setImgSel(null)
 							setProjIdx(i)

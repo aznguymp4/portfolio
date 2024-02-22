@@ -10,15 +10,15 @@ const Skills = ({ delay }) => {
 	const focus = useSelector(s=>s.options.focus)
 	const selSkill = SkillList[skillIdx]
 
-	return <div className="projects themeApplicable">
-		<div className='ac s500 wbold ca700'>Skills <span className='wsemibold s400 ca900'>&</span> Tools</div>
+	return <div className="projects">
+		<div className='ac s500 wbold ca700 themeApplicable'>Skills <span className='wsemibold s400 ca900 themeApplicable'>&</span> Tools</div>
 		<br/>
 		<div className='projectWindow skillWindow themeApplicable noDrag noSelect'>
 			<div className={`projectWindowLTop ${focus?'':'disabled'}`}>
 				<div className={`macBtn ${focus?'':'gray'}`} onClick={()=>setSkillIdx(null)}><i className="fa-solid fa-xmark"/></div>
 				<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-minus"/></div>
 				<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-plus"/></div>
-				<span className='skillWindowTitle trim s200 ct900 wsemibold'>{selSkill?.name || 'Skills'}</span>
+				<span className='skillWindowTitle themeApplicable trim s200 ct900 wsemibold'>{selSkill?.name || 'Skills'}</span>
 				{selSkill && <Link
 					className='skillWindowOpen s100 w500'
 					to={selSkill.url}

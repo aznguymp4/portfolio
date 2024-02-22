@@ -24,10 +24,10 @@ const Navigation = () => {
 
   return <div id='navBar'>
     <m.div initial={{x:-25, opacity:0}} animate={animate} transition={transition}>
-      <NavLink to='/'><i className='fa-solid fa-house fa-xl'/></NavLink>
+      <NavLink to='/'><i className='themeApplicable fa-solid fa-house fa-xl'/></NavLink>
     </m.div>
     <m.div initial={{x:25, opacity:0}} animate={animate} transition={transition}>
-      <ToggleSwitch state={d} setState={setD} label={<i style={{width:'25px'}} className={`fas fa-${dark?'moon fa-flip-horizontal':'sun'} fa-xl`}/>}/>
+      <ToggleSwitch state={d} setState={setD} label={<i style={{width:'25px'}} className={`fa-solid themeApplicable fa-${dark?'moon fa-flip-horizontal':'sun'} fa-xl`}/>}/>
     </m.div>
     {/* {<div onClick={()=>dispatch(setTheme(!dark))} id='themeToggle'>
       <i className={`fas fa-${dark?'moo':'su'}n fa-xl`}/> {dark?'Dark':'Light'} Theme

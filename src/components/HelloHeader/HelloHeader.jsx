@@ -12,6 +12,7 @@ const HelloHeader = () => {
 					<m.div
 						initial={INitial}
 						animate={aaa}
+						className='themeApplicable'
 					>
 						Hey!
 						<m.img
@@ -23,7 +24,7 @@ const HelloHeader = () => {
 							
 							initial=         {{ rotate: 45, scale: .5, opacity: 0, translate: '45% -25%' }}
 							animate=         {{ rotate: 0, scale: 1, opacity: 1, translate: '0% 0%' }}
-							transition=      {{ type: 'spring', stiffness: 300, damping: 16, }}
+							transition=      {{ type: 'spring', stiffness: 300, damping: 16 }}
 							whileHover=      {{ translate: '8% -8%', rotate: 13 }}
 							whileTap=        {{ scale: .9, rotate: 13, translate: '8% -3%', cursor: 'grabbing' }}
 							dragConstraints= {{ left: 0, right: 0, top: 0, bottom: 0 }}
@@ -37,7 +38,7 @@ const HelloHeader = () => {
 					className='s600'
 					initial={INitial}
 					animate={aaa}
-					transition={{delay: .1}}
+					transition={{delay: window.homePageINterval}}
 				>
 					I&apos;m <b>Erich Nguyen</b>,
 				</m.div>
@@ -46,7 +47,7 @@ const HelloHeader = () => {
 				id='roles'
 				initial={INitial}
 				animate={aaa}
-				transition={{delay: .2}}
+				transition={{delay: window.homePageINterval*2}}
 			>
 				<div className='role noSelect noDrag'>
 					<img draggable='false' alt='Web development icon' src='./icon/dev.webp' className='roleIcon noSelect noDrag'/>

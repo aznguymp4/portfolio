@@ -27,7 +27,7 @@
 	overflow: hidden;
 	box-shadow: 0 4px 32px var(--text-200);
 	margin: auto;
-	transition-property: background-color, border-color !important;
+	transition-property: background-color, border-color, box-shadow !important;
 	max-width: var(--maxProjectWindowWidth);
 	height: var(--maxProjectWindowHeight);
 	display: flex;
