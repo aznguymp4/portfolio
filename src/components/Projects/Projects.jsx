@@ -43,12 +43,17 @@ const Projects = () => {
 			<div className='projectWindowR'>
 				<div className='projectWindowRTop wsemibold'>{proj.name}</div>
 				<div className='projectWindowRBody'>{
-					proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
-							img.vid
-							? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-							: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
-						}</div>
-					)
+					<>
+						<div>
+							
+						</div>
+						{proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
+								img.vid
+								? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
+								: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
+							}</div>
+						)}
+					</>
 				}</div>
 			</div>
 		</div>

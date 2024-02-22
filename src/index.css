@@ -9,20 +9,11 @@
   
   --bezierWholeOut: cubic-bezier(0,1,0,1);
 
-  --contentMaxWidth: 1100px
+  --contentMaxWidth: 1100px;
+
+  /* placeholder color to not blind your eyes while the real color palette loads */
+  --background-75: #14171f;
 }
-/* .deferTransition *, .deferTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-} */
-/* .themeApplicable {
-  transition-property: background-color, color, border-color;
-  transition-duration: 7s;
-  transition-timing-function: ease-out;
-} */
 a {
   color: var(--accent-700);
   text-decoration: none;
@@ -32,7 +23,7 @@ a:hover {
 }
 
 body {
-  background-color: var(--background-100);
+  background-color: var(--background-75);
   color: var(--text-900);
 }
 .noSelect, .noSelect *, br {

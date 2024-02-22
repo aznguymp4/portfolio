@@ -18,18 +18,22 @@ const HomePage = () => {
 		<HelloHeader/>
 
 		<Quote/>
-		<AboutMe/>
-
 		<m.div
 			initial={initial}
 			animate={animate}
 			transition={{delay: window.homePageINterval*3}}
-		><Skills delay={window.homePageINterval*4}/></m.div>
+		><AboutMe/></m.div>
 
 		<m.div
 			initial={initial}
 			animate={animate}
 			transition={{delay: window.homePageINterval*4}}
+		><Skills delay={window.homePageINterval*4}/></m.div>
+
+		<m.div
+			initial={initial}
+			animate={animate}
+			transition={{delay: window.homePageINterval*5}}
 		><Projects/></m.div>
 	</>
 }

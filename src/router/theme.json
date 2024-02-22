@@ -1,5 +1,7 @@
 {
   "light": {
+    "background-75": "#eff1f5",
+
     "text-50": "#eef1f7",
     "text-100": "#dce2ef",
     "text-200": "#b9c5df",
@@ -57,6 +59,8 @@
     "accent-950": "#00061a"
   },
   "dark": {
+    "background-75": "#14171f",
+    
     "text-50": "#080b11",
     "text-100": "#101623",
     "text-200": "#202c46",

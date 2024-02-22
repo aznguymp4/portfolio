@@ -6,6 +6,8 @@ import configureStore from "./redux/store";
 import { router } from "./router";
 import "./index.css";
 
+window.init = new Date()
+window.young = () => new Date() - window.init < 250
 const store = configureStore();
 
 if (import.meta.env.MODE !== "production") {
