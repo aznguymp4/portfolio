@@ -5,6 +5,7 @@ import './Projects.css'
 import GifV from '../GifV'
 import ProjectList from './ProjectList'
 import PreviewWindow from './PreviewWindow'
+import { motion as m } from 'framer-motion'
 
 const Projects = () => {
 	const [projIdx, setProjIdx] = useState(0)
@@ -13,10 +14,10 @@ const Projects = () => {
 	const focus = useSelector(s=>s.options.focus)
 	const proj = ProjectList[projIdx]
 
-	const selImg = (e, img) => {
+	const selImg = (e, img, key) => {
 		if(imgSel) return
 		setImgSelLoaded(false)
-		setImgSel({...img, target: e.target})
+		setImgSel({...img, target: e.target, key})
 	}
 
 	const macBtns = <>
@@ -55,10 +56,20 @@ const Projects = () => {
 					{imgSel && !imgSelLoaded && <div className='ca700 ar projectWindowRTopLoad'><i className="fa-solid fa-gear fa-spin fa-lg"/></div>}
 				</div>
 				<div className='projectWindowRTabs'>{tabs}</div>
-				<div className='projectWindowRBody'>{
+				<div className='projectWindowRBody macScrollBar'>{
 					<>
 						<div className='projectWindowBodyInfo'>
-							<div className='projectInfoName'>
+							<m.div
+								className='projectInfoName'
+								initial="hidden"
+								whileInView="visible"
+								viewport={{ once: true }}
+								transition={{ delay: .2 }}
+								variants={{
+									visible: { opacity: 1, x: 0 },
+									hidden: { opacity: 0, x: -15 }
+								}}
+							>
 								<div className='projectInfoIcon' style={{backgroundColor: proj.iconBg}}>
 									<img key={'icon'+projIdx} src={`./projects/${proj.name}/${proj.icon}`}/>
 								</div>
@@ -71,15 +82,30 @@ const Projects = () => {
 										<i style={{marginLeft:'8px'}} className="fa-solid ct600 fa-arrow-up-right-from-square fa-xs"/>
 									</div>
 								</div>
-							</div>
-							<div className='projectInfoDesc s200 w500'>{proj.desc}</div>
+							</m.div>
+							<m.div
+								className='projectInfoDesc s200 w500 ct700'
+								initial="hidden"
+								whileInView="visible"
+								viewport={{ once: true }}
+								transition={{ delay: .2 }}
+								variants={{
+									visible: { opacity: 1, x: 0 },
+									hidden: { opacity: 0, x: 15 }
+								}}
+							>
+								{proj.desc}
+							</m.div>
 						</div>
-						{proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
+						{proj.imgs.map((img,idx) => {
+							const key = `projImg-${proj.name}-${idx}`
+
+							return <div key={key} className='projectImg'>{
 								img.vid
-								? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-								: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
+								? <GifV onClick={e=>selImg(e, img, key)}  key={key} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
+								: <img onClick={e=>selImg(e, img, key)} loading='lazy'  key={key} src={`./projects/${proj.name}/${img.src}`}/>
 							}</div>
-						)}
+						})}
 					</>
 				}</div>
 			</div>

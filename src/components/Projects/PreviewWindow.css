@@ -23,20 +23,31 @@
   }
 }
 
+:root {
+  --previewWindowMaxWidth: 85vw;
+  --previewWindowMaxHeight: 85vh;
+}
+
 .previewWindow {
   position: fixed;
   transform: translate(-50%, -50%);
-  max-width: var(--contentMaxWidth);
-  background-color: var(--text-200);
+  /* max-width: var(--contentMaxWidth); */
+  max-width: var(--previewWindowMaxWidth);
+  max-height: var(--previewWindowMaxHeight);
+  background-color: #66666699;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   padding: 0 12px 12px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--text-400);
+  border: 1px solid #888;
   border-radius: 10px;
 	box-shadow: 0 4px 40px #111111cc;
   display: none;
   transform-origin: top left;
   animation-fill-mode: forwards;
+  transform: scale(0) translate(-50%, -50%);
+  z-index: 1;
 }
 .previewWindow.loaded {
   display: unset;
@@ -59,21 +70,21 @@
 	border-radius: 6px;
 	font-size: 9.2px;
   text-align: center;
-	background-color: var(--text-400);
-  border: .5px solid  var(--text-400);
-  color: var(--text-950);
+	background-color: #666;
+  border: .5px solid  #777;
+  color: white;
 }
 .previewWindowTopBtn:hover {
-  background-color: var(--text-600);
-  border-color: var(--text-500);
+  background-color: #777;
+  border-color: #888;
 }
 .previewWindowTopBtn:active {
-  background-color: var(--text-300);
-  border-color: var(--text-300);
+  background-color: #555;
+  border-color: #444;
 }
 .previewWindowBody > img, .previewWindowBody > video {
-  max-width: calc(85vw);
-  max-height: calc(60vh);
+  max-width: calc(var(--previewWindowMaxWidth));
+  max-height: calc(var(--previewWindowMaxHeight) - 82px);
   object-fit: contain;
   border-radius: 5px;
 }

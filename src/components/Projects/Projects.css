@@ -220,7 +220,8 @@
 }
 .projectInfoOpenBtn > a:hover {
 	text-decoration: none;
-	background-color: var(--accent-700);
+	background-color: var(--accent-800);
+	color: white;
 }
 .projectImg {
 	height: 158px;
