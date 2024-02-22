@@ -48,8 +48,8 @@
 	color: #00000077;
 }
 .macBtn {
-	width: 11px;
-	height: 11px;
+	min-width: 11px;
+	min-height: 11px;
 	border-radius: 6px;
 	font-size: 9.2px;
 }
@@ -90,6 +90,7 @@
 }
 .projectTab:hover {
 	background-color: var(--background-100);
+	cursor: pointer;
 }
 .projectTab.selected {
 	background-color: var(--background-300);
@@ -107,9 +108,6 @@
 }
 .projectTabName {
 	margin: auto 0;
-  white-space: nowrap;
-	overflow: hidden;
-  text-overflow: ellipsis;
 }
 .projectWindowR {
 	flex-grow: 1;
@@ -136,4 +134,5 @@
 	height: 100%;
 	border-radius: 10px;
 	background-color: #00000027;
+	cursor: zoom-in;
 }

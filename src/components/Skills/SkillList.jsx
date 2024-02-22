@@ -30,6 +30,11 @@ const SkillList = [
     url: 'https://sequelize.org/'
   },
   {
+    name: 'Cloudflare',
+    icon: 'cloudflare-plain',
+    url: 'https://www.cloudflare.com/'
+  },
+  {
     name: 'Express',
     icon: 'express-original',
     url: 'https://expressjs.com/'
@@ -98,6 +103,11 @@ const SkillList = [
     name: 'Adobe Illustrator',
     icon: 'illustrator-plain',
     url: 'https://www.adobe.com/products/illustrator.html'
+  },
+  {
+    name: 'Blender',
+    icon: 'blender-original',
+    url: 'https://www.blender.org/'
   },
   {
     name: 'Node.js',
