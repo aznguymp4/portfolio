@@ -10,6 +10,18 @@
     left: 50%;
   }
 }
+@keyframes previewClose {
+  0% {
+    /* scale: 1; */
+    transform: scale(1) translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    /* scale: .25; */
+    transform: scale(0) translate(-50%, -50%);
+  }
+}
 
 .previewWindow {
   position: fixed;
@@ -24,13 +36,18 @@
 	box-shadow: 0 4px 40px #111111cc;
   display: none;
   transform-origin: top left;
+  animation-fill-mode: forwards;
 }
 .previewWindow.loaded {
   display: unset;
   animation-name: previewPopup;
   animation-duration: .575s;
   animation-timing-function: var(--bezierWholeOut);
-  animation-fill-mode: forwards;
+}
+.previewWindow.closing {
+  animation-name: previewClose;
+  animation-duration: .175s;
+  animation-timing-function: ease-in;
 }
 .previewWindowTop {
   display: flex;
@@ -45,6 +62,14 @@
 	background-color: var(--text-400);
   border: .5px solid  var(--text-400);
   color: var(--text-950);
+}
+.previewWindowTopBtn:hover {
+  background-color: var(--text-600);
+  border-color: var(--text-500);
+}
+.previewWindowTopBtn:active {
+  background-color: var(--text-300);
+  border-color: var(--text-300);
 }
 .previewWindowBody > img, .previewWindowBody > video {
   max-width: calc(85vw);

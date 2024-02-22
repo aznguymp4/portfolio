@@ -2,6 +2,8 @@
 /* @import url(./color.css); */
 
 :root {
+  overflow-x: hidden;
+  
   --bezierBounceOut: cubic-bezier(0,.7,.3,1.5);
   --bezierQuartOut: cubic-bezier(0,.75,.25,1);
   --bezierQuartIn: cubic-bezier(.75,0,1,.25);
@@ -25,6 +27,7 @@ a:hover {
 body {
   background-color: var(--background-75);
   color: var(--text-900);
+  overflow-x: hidden;
 }
 .noSelect, .noSelect *, br {
 	-webkit-user-select: none; /* Safari */

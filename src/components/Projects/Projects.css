@@ -2,18 +2,33 @@
 	--maxProjectWindowWidth: 768px;
 	--maxProjectWindowHeight: 512px;
 	--projectWindowTileSize: 256px;
+	--projectWindowTopBar: #00000030
 }
 @media screen and (max-width: 880px) {
 	.projects {
 		margin: 15px 15px 64px!important;
 	}
 }
-@media screen and (max-width: 800px) {
-	.projectTab {
-		scale: .85
+@media screen and (max-width: 600px) {
+	/* .projectWindowRBody {
+		grid-template-columns: 1fr !important;
+	} */
+	.projectWindowL {
+		display: none !important;
 	}
-	.projectWindowLList {
-		padding: 4px !important;
+	.projectWindowRTop > .projectWindowLTop {
+		display: flex !important;
+	}
+	.projectWindowRTabs {
+		display: flex !important;
+	}
+	.projectWindowRBody {
+		max-height: calc(var(--maxProjectWindowHeight) - 122px) !important;
+	}
+}
+@media screen and (max-width: 450px) {
+	.projectWindowRBody {
+		grid-template-columns: 1fr !important;
 	}
 }
 
@@ -40,9 +55,14 @@
 .projectWindowLTop {
 	display: flex;
 	gap: 8px;
-	padding: 20px;
+	padding: 19px 18px;
 	color: #00000000;
 	text-align: center;
+}
+.projectWindowRTop > .projectWindowLTop {
+	display: none;
+	margin: auto 16px auto 0;
+	padding: 0;
 }
 .projectWindowLTop:not(.disabled):hover > div {
 	color: #00000077;
@@ -54,7 +74,8 @@
 	max-height: 11px;
 	width: 11px;
 	height: 11px;
-	border-radius: 6px;
+	border-radius: 50%;
+	aspect-ratio: 1;
 	font-size: 9.2px;
 }
 .macBtn:nth-child(1) {
@@ -82,9 +103,24 @@
 	max-height: calc(var(--maxProjectWindowHeight) - 73px);
 	transition: padding 1s var(--bezierQuartOut);
 }
+.projectWindowRTabs {
+	display: none;
+	flex-direction: row;
+	gap: 1px;
+}
+.projectWindowRTabs > .projectTab {
+	flex-grow: 1;
+	background-color: var(--background-100);
+	transition: .2s var(--bezierQuartOut) background-color;
+	font-size: 12px;
+	justify-content: center;
+	box-shadow: 0 -1px 0 var(--background-50);
+}
+.projectWindowLList > .projectTab {
+	border-radius: 5px;
+}
 .projectTab {
 	transition: scale 1s var(--bezierQuartOut);
-	border-radius: 5px;
 	font-size: 14px;
 	line-height: 10px;
 	font-weight: 500;
@@ -96,7 +132,14 @@
 	background-color: var(--background-100);
 	cursor: pointer;
 }
-.projectTab.selected {
+.projectWindowLList > .projectTab.selected {
+	background-color: var(--background-300);
+}
+.projectWindowRTabs > .projectTab.selected {
+	background-color: var(--projectWindowTopBar);
+	box-shadow: none
+}
+.projectWindowRTabs > .projectTab:not(.selected):hover {
 	background-color: var(--background-300);
 }
 .projectTabIcon > img {
@@ -117,16 +160,20 @@
 	flex-grow: 1;
 }
 .projectWindowRTop {
-	padding: 16px 20px;
-	background-color: #00000027;
+	padding: 16px 16px 16px 18px;
+	background-color: var(--projectWindowTopBar);
+	display: flex;
+}
+.projectWindowRTopLoad {
+	flex-grow: 1;
 }
 .projectWindowRBody {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, var(--projectWindowTileSize));
+	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
-	padding: 26px 20px;
+	padding: 20px 20px;
 	gap: 20px;
-	max-height: calc(var(--maxProjectWindowHeight) - 103px);
+	max-height: calc(var(--maxProjectWindowHeight) - 91px);
 	overflow-y: scroll;
 }
 .projectImg {
@@ -137,6 +184,6 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
-	background-color: #00000027;
+	background-color: var(--projectWindowTopBar);
 	cursor: zoom-in;
 }
