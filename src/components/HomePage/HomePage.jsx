@@ -3,7 +3,10 @@ import HelloHeader from '../HelloHeader'
 import Projects from '../Projects'
 import Skills from '../Skills'
 import Quote from './Quote'
+import AboutMe from '../AboutMe'
 import { motion as m } from 'framer-motion'
+
+window.homePageINterval = .150
 
 const HomePage = () => {
 	const [initial, animate] = [
@@ -13,17 +16,24 @@ const HomePage = () => {
 
   return <>
 		<HelloHeader/>
+
 		<Quote/>
 		<m.div
 			initial={initial}
 			animate={animate}
-			transition={{delay: .3}}
-		><Skills delay={.4}/></m.div>
+			transition={{delay: window.homePageINterval*3}}
+		><AboutMe/></m.div>
 
 		<m.div
 			initial={initial}
 			animate={animate}
-			transition={{delay: .4}}
+			transition={{delay: window.homePageINterval*4}}
+		><Skills delay={window.homePageINterval*4}/></m.div>
+
+		<m.div
+			initial={initial}
+			animate={animate}
+			transition={{delay: window.homePageINterval*5}}
 		><Projects/></m.div>
 	</>
 }

@@ -27,7 +27,7 @@
 	overflow: hidden;
 	box-shadow: 0 4px 32px var(--text-200);
 	margin: auto;
-	transition-property: background-color, border-color !important;
+	transition-property: background-color, border-color, box-shadow !important;
 	max-width: var(--maxProjectWindowWidth);
 	height: var(--maxProjectWindowHeight);
 	display: flex;
@@ -50,6 +50,10 @@
 .macBtn {
 	min-width: 11px;
 	min-height: 11px;
+	max-width: 11px;
+	max-height: 11px;
+	width: 11px;
+	height: 11px;
 	border-radius: 6px;
 	font-size: 9.2px;
 }

@@ -15,12 +15,12 @@ const Projects = () => {
 		setImgSel({...img, bounds: e.target.getBoundingClientRect()})
 	}
 
-	return <div className="projects themeApplicable">
+	return <div className="projects">
 		<div className='ac s500 wbold ca700'>Projects</div>
 		<div className='ac s300 w500 ct700'>Check out my work!</div>
 		<br/>
-		<div className='projectWindow themeApplicable noDrag noSelect'>
-			<div className='projectWindowL themeApplicable'>
+		<div className='projectWindow noDrag noSelect'>
+			<div className='projectWindowL'>
 				<div className={`projectWindowLTop ${focus?'':'disabled'}`}>
 					<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-xmark"/></div>
 					<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-minus"/></div>
@@ -35,7 +35,7 @@ const Projects = () => {
 						}}
 						key={i}
 					>
-						<div className='projectTabIcon'><img className='themeApplicable' src={`./projects/${p.name}/${p.icon}`}/></div>
+						<div className='projectTabIcon'><img className='' src={`./projects/${p.name}/${p.icon}`}/></div>
 						<div className='projectTabName'>{p.name}</div>
 					</div>)
 				}</div>
@@ -43,12 +43,17 @@ const Projects = () => {
 			<div className='projectWindowR'>
 				<div className='projectWindowRTop wsemibold'>{proj.name}</div>
 				<div className='projectWindowRBody'>{
-					proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
-							img.vid
-							? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-							: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
-						}</div>
-					)
+					<>
+						<div>
+							
+						</div>
+						{proj.imgs.map((img,idx) => <div key={idx} className='projectImg'>{
+								img.vid
+								? <GifV onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
+								: <img onClick={e=>selImg(e, img)} src={`./projects/${proj.name}/${img.src}`}/>
+							}</div>
+						)}
+					</>
 				}</div>
 			</div>
 		</div>

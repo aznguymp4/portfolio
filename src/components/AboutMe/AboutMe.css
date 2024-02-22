@@ -1,0 +1,11 @@
+.aboutMeBody {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+  max-width: var(--maxProjectWindowWidth);
+  padding: 16px;
+}
+.aboutMeDesc {
+  margin: 10px auto;
+  line-height: 26px;
+}

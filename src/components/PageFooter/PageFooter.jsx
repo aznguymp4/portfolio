@@ -1,7 +1,7 @@
 import './PageFooter.css'
 
 const PageFooter = () => {
-	return <div id='pageFooter' className='themeApplicable ac'>
+	return <div id='pageFooter' className='ac'>
 		<div id='pageFooterTop'>
 			<div id='socials'>
 				<a target='_blank' rel='noopener noreferrer' title='Contact Me' href='mailto:mail@aznguy.com'><i className='fa-solid fa-envelope'/></a>

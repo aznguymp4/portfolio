@@ -13,8 +13,8 @@
     transition-timing-function: var(--bezierQuartOut);
     transition-property: background-color;
 }
-.toggleSwitchWrap:active > .toggleSwitchInner { width: 24px; }
-.toggleSwitchWrap[data-checked="1"]:active > .toggleSwitchInner { margin-left: 10px; }
+.toggleSwitchWrap:active > .toggleSwitchInner:not(.moving) { width: 24px; }
+.toggleSwitchWrap[data-checked="1"]:active > .toggleSwitchInner:not(.moving) { margin-left: 10px; }
 .toggleSwitchInner {
     width: 18px;
     height: 18px;

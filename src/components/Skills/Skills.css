@@ -18,6 +18,8 @@
 	padding: 8px;
 	border-radius: 8px;
 	transition-timing-function: var(--bezierQuartOut);
+	transition-duration: .25s;
+	transition-property: background-color, color;
 }
 .skillIcons > i:hover {
 	color: var(--background-100);
@@ -30,7 +32,6 @@
 }
 .skillWindowTitle {
 	line-height: 12px;
-
 	margin: auto auto auto 12px;
 }
 .skillWindowOpen {

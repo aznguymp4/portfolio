@@ -1,7 +1,7 @@
 #CCCquote {
   display: grid;
   justify-content: center;
-  margin: 40px 0 110px;
+  margin: 20px 0 70px;
 }
 #CCCquote > svg {
   max-height: 120px;

@@ -1,5 +1,5 @@
 @import url(./font.css);
-@import url(./color.css);
+/* @import url(./color.css); */
 
 :root {
   --bezierBounceOut: cubic-bezier(0,.7,.3,1.5);
@@ -9,19 +9,10 @@
   
   --bezierWholeOut: cubic-bezier(0,1,0,1);
 
-  --contentMaxWidth: 1100px
-}
-.deferTransition *, .deferTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-.themeApplicable {
-  transition-property: background-color, color, border-color;
-  transition-duration: .3s;
-  transition-timing-function: ease-out;
+  --contentMaxWidth: 1100px;
+
+  /* placeholder color to not blind your eyes while the real color palette loads */
+  --background-75: #14171f;
 }
 a {
   color: var(--accent-700);
@@ -32,7 +23,7 @@ a:hover {
 }
 
 body {
-  background-color: var(--background-100);
+  background-color: var(--background-75);
   color: var(--text-900);
 }
 .noSelect, .noSelect *, br {
