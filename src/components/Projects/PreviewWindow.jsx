@@ -8,9 +8,9 @@ const PreviewWindow = ({ proj, img, setImgSel, loaded, setLoaded }) => {
   img.bounds = img.target.getBoundingClientRect()
   
   const load = () => {
-    setTimeout(()=>{
+    // setTimeout(()=>{
       setLoaded(true)
-    }, 30)
+    // }, 30)
   }
   const close = useCallback(() => {
     img.bounds = img.target.getBoundingClientRect()
@@ -30,8 +30,8 @@ const PreviewWindow = ({ proj, img, setImgSel, loaded, setLoaded }) => {
   },[close, loaded])
 
   const image = img.vid
-  ? <GifV onLoad={load} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
-  : <img onLoad={load} src={`./projects/${proj.name}/${img.src}`}/>
+  ? <GifV onLoad={load} key={img.key} src={`./projects/${proj.name}/${img.src}`} type={img.vid}/>
+  : <img onLoad={load} key={img.key} src={`./projects/${proj.name}/${img.src}`}/>
 
   return <OutsideAlerter onOutsideClick={close}>
     <div
@@ -43,13 +43,11 @@ const PreviewWindow = ({ proj, img, setImgSel, loaded, setLoaded }) => {
     >
       <div className='previewWindowTop'>
         <div className='previewWindowTopBtn mav' onClick={close}><i className="fa-solid fa-xmark"/></div>
-        <span className='ma s200 wsemibold'>{proj.name}</span>
+        <span className='ma s200 wsemibold trim'>{img.alt}</span>
       </div>
-      <div className='previewWindowBody'>
+      <div className='previewWindowBody ac'>
         {image}
-        <div className=''>
-          
-        </div>
+        <div className='s200 w600' style={{marginTop: '8px', textShadow: '0 0 16px var(--text-100)'}}>{img.desc}</div>
       </div>
     </div>
   </OutsideAlerter>
