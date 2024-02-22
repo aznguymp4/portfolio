@@ -1,7 +1,6 @@
 :root {
 	--maxProjectWindowWidth: 768px;
 	--maxProjectWindowHeight: 512px;
-	--projectWindowTileSize: 256px;
 	--projectWindowTopBar: #00000030
 }
 @media screen and (max-width: 880px) {
@@ -9,10 +8,12 @@
 		margin: 15px 15px 64px!important;
 	}
 }
+@media screen and (max-width: 700px) {
+	.projectWindowBodyInfo {
+		flex-direction: column;
+	}
+}
 @media screen and (max-width: 600px) {
-	/* .projectWindowRBody {
-		grid-template-columns: 1fr !important;
-	} */
 	.projectWindowL {
 		display: none !important;
 	}
@@ -26,9 +27,12 @@
 		max-height: calc(var(--maxProjectWindowHeight) - 122px) !important;
 	}
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
 	.projectWindowRBody {
 		grid-template-columns: 1fr !important;
+	}
+	.projectWindowBodyInfo {
+		grid-column: unset !important;
 	}
 }
 
@@ -145,7 +149,9 @@
 .projectTabIcon > img {
 	width: 14px;
 	height: 14px;
-	transition-property: filter !important;
+	transition-property: filter;
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
 }
 [data-theme="light"] .projectTabIcon > img {
 	filter: invert(91%) sepia(89%) saturate(6870%) hue-rotate(222deg) brightness(71%) contrast(117%);
@@ -176,8 +182,48 @@
 	max-height: calc(var(--maxProjectWindowHeight) - 91px);
 	overflow-y: scroll;
 }
+.projectWindowBodyInfo {
+	grid-column: 1/3;
+	height: auto;
+	display: flex;
+	gap: 24px;
+}
+.projectInfoText {
+	display: flex;
+	flex-direction: column;
+}
+.projectInfoName {
+	display: flex;
+	gap: 16px;
+}
+.projectInfoIcon {
+	padding: 14px;
+	border-radius: 16px;
+	transition: background-color .2s ease-out;
+	box-shadow: 0 4px 16px #00000066;
+	aspect-ratio: 1;
+	height: 40px;
+	display: flex;
+}
+.projectInfoIcon > img {
+	width: 40px;
+}
+.projectInfoOpenBtn {
+	margin-top: 9px;
+}
+.projectInfoOpenBtn > a {
+	padding: 6px 18px;
+	border-radius: 24px;
+	background-color: var(--accent-600);
+	transition: background-color .2s var(--bezierQuartOut);
+	color: white;
+}
+.projectInfoOpenBtn > a:hover {
+	text-decoration: none;
+	background-color: var(--accent-700);
+}
 .projectImg {
-	height: calc(var(--projectWindowTileSize) * .5625);
+	height: 158px;
 }
 .projectImg > img, .projectImg > video {
 	object-fit: cover;

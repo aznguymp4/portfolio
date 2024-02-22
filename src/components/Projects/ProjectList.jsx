@@ -3,6 +3,7 @@ const ProjectList = [
     name: 'Pinteract',
     url: 'https://pinteract.onrender.com',
     icon: 'icon.png',
+    iconBg: '#ed4245',
     imgs: [
       {
         src: 'landing.jpeg',
@@ -39,6 +40,7 @@ const ProjectList = [
     name: 'Dissscord',
     url: 'https://dissscord.onrender.com',
     icon: 'icon.svg',
+    iconBg: '#5865f2',
     imgs: [
       {
         src: 'landing.jpeg',
@@ -83,6 +85,7 @@ const ProjectList = [
     name: 'LiquidBnB',
     url: 'https://liquidbnb.onrender.com',
     icon: 'icon.svg',
+    iconBg: '#ff5a5f',
     imgs: [
       {
         src: 'landing.jpeg',
