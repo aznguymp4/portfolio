@@ -112,7 +112,7 @@
 }
 .role {
 	font-size: larger;
-	margin: 0 6px 0 16px;
+	margin-right: 6px;
 	line-height: 0px;
 	animation-iteration-count: infinite;
 	animation-name: roleCycle;
