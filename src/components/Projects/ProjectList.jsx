@@ -2,7 +2,7 @@ const ProjectList = [
   {
     name: 'Pinteract',
     dir: 'Pinteract',
-    url: 'https://pinteract.onrender.com',
+    url: 'https://pinteract.aznguy.com',
     icon: 'icon.svg',
     iconBg: '#ed4245',
     imgs: [
@@ -41,7 +41,7 @@ const ProjectList = [
   {
     name: 'Dissscord',
     dir: 'Dissscord',
-    url: 'https://dissscord.onrender.com',
+    url: 'https://dissscord.aznguy.com',
     icon: 'icon.svg',
     iconBg: '#5865f2',
     imgs: [
@@ -187,7 +187,7 @@ const ProjectList = [
   {
     name: 'LiquidBnB',
     dir: 'LiquidBnB',
-    url: 'https://liquidbnb.onrender.com',
+    url: 'https://liquidbnb.aznguy.com',
     icon: 'icon.svg',
     iconBg: '#ff5a5f',
     imgs: [
@@ -268,5 +268,5 @@ const ProjectList = [
       Multi-purpose Discord bot with commands ranging from moderation to multiplayer games. 100% built independently.
     </div>
   }
-].sort(()=>Math.random()-.5)
+]//.sort(()=>Math.random()-.5)
 export default ProjectList
