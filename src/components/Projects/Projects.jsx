@@ -62,11 +62,15 @@ const Projects = () => {
 						<div>Projects</div>
 						{imgSel && !imgSelLoaded && <div className='ca700 ar projectWindowRTopLoad'><i className="fa-solid fa-gear fa-spin fa-lg"/></div>}
 					</div>
-					{rTabsOpen && <m.div
+					{<m.div
 						className='projectWindowRTabs'
-						initial={{y:-48, scaleY: 0}}
-						animate={{y:0, scaleY: 1}}
-						transition={{duration: .2, ease: 'backOut'}}
+						variants={{
+							visible: {y:0, scaleY: 1},
+							hidden: {y:-48, scaleY: 0}
+						}}
+						initial='hidden'
+						animate={rTabsOpen?'visible':'hidden'}
+						transition={{duration: .2, ease: 'circOut'}}
 					>
 						{tabs}
 					</m.div>}

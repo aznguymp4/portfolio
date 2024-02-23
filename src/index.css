@@ -59,7 +59,7 @@ body {
 }
 .macScrollBar::-webkit-scrollbar-thumb {
   border: 4px solid var(--background-200);
-  background-color: var(--text-100);
+  background-color: #80808080;
   border-radius: 16px;
 }
 .macScrollBar::-webkit-scrollbar-track {

@@ -13,7 +13,7 @@ const GifV = ({src, type, onClick, onLoad, unmute, thumbTime}) => {
 		vid.volume=unmute?.25:0
 		if(focus) vid.play()
 		else vid.pause()
-	}, [focus])
+	}, [focus, thumbTime, unmute])
 
   return <video
 		className='gifv'

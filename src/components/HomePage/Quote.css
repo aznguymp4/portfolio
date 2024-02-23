@@ -1,11 +1,32 @@
+@keyframes shine {
+  0%, 80% {
+    left: -1000px;
+  }
+  100% {
+    left: 1000px;
+  }
+}
 #CCCquote {
   display: grid;
   justify-content: center;
-  margin: 20px 0 70px;
+  margin: 0 0 90px;
+}
+#svgShine {
+  position: absolute;
+  width: 15px;
+  height: 115px;
+  background-color: var(--background-75);
+  opacity: .5;
+  rotate: 45deg;
+  scale: 2;
+  animation-name: shine;
+  animation-duration: 15s;
+  /* animation-duration: 5s; */
+  animation-iteration-count: infinite;
+  backdrop-filter: brightness(150%);
+  animation-timing-function: linear;
+  -webkit-backdrop-filter: brightness(150%);
 }
 #CCCquote > svg {
-  max-height: 120px;
-  grid-row: 1;
-  grid-column: 1;
-  transition: .3s opacity ease-out;
+  max-height: 115px;
 }
