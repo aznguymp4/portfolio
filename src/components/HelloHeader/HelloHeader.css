@@ -43,6 +43,9 @@
 		justify-content: center;
 		padding: 8px 0 !important;
 	}
+	.getInTouch {
+		margin: auto;
+	}
 }
 @keyframes roleCycle {
 	0%, 30%, 66%, 100% {
@@ -98,7 +101,7 @@
 }
 
 #name {
-	margin-bottom: 12px;
+	margin-bottom: 20px;
 }
 
 #waveEmoji {

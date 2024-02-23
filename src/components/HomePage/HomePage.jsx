@@ -28,7 +28,7 @@ const HomePage = () => {
 			initial={initial}
 			animate={animate}
 			transition={{delay: window.homePageINterval*4}}
-		><Skills delay={window.homePageINterval*4}/></m.div>
+		><Skills/></m.div>
 
 		<m.div
 			initial={initial}

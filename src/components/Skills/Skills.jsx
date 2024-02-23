@@ -5,7 +5,7 @@ import SkillList from './SkillList'
 import './Skills.css'
 import { motion as m } from 'framer-motion'
 
-const Skills = ({ delay }) => {
+const Skills = () => {
 	const [skillIdx, setSkillIdx] = useState(null)
 	const focus = useSelector(s=>s.options.focus)
 	const selSkill = SkillList[skillIdx]
@@ -18,7 +18,7 @@ const Skills = ({ delay }) => {
 				<div className={`macBtn ${focus?'':'gray'}`} onClick={()=>setSkillIdx(null)}><i className="fa-solid fa-xmark"/></div>
 				<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-minus"/></div>
 				<div className={`macBtn ${focus?'':'gray'}`}><i className="fa-solid fa-plus"/></div>
-				<span className='skillWindowTitle trim s200 ct900 wsemibold'>{selSkill?.name || 'Skills'}</span>
+				<span className='skillWindowTitle s200 ct900 wsemibold'>{selSkill?.name || 'Skills'}</span>
 				{selSkill && <Link
 					className='skillWindowOpen s100 w500'
 					to={selSkill.url}
@@ -33,9 +33,14 @@ const Skills = ({ delay }) => {
 					key={i}
 					className={`devicon-${s.icon} ${skillIdx===i?'selected':''}`}
 					onClick={()=>setSkillIdx(c=>c===i?null:i)}
-					initial={{y:5, opacity:0}}
-					animate={{y:0, opacity:1}}
-					transition={{delay: delay+(i*.025)}}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					transition={{ delay: (i*.025)+.1 }}
+					variants={{
+						hidden: { y:5, opacity:0 },
+						visible: { y:0, opacity:1 }
+					}}
 				/>)
 			}</div>
 		</div>
