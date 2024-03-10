@@ -85,13 +85,23 @@ const HelloHeader = () => {
 				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My LinkedIn' to='https://linkedin.com/in/erich-n/'><i className='fa-brands fa-linkedin fa-lg'/></Link>
 			</m.div>
 		</div>
-		<div id='headshot'>
+		<m.div
+			id='headshot'
+			className='noDrag noSelect'
+			transition={{ duration: 1.2, ease: 'circOut' }}
+			whileHover={{ scale: 1.02, cursor: 'pointer' }}
+			whileTap  ={{ scale: .98, cursor: 'grabbing' }}
+			dragConstraints= {{ left: 0, right: 0, top: 0, bottom: 0 }}
+			dragTransition=  {{ bounceStiffness: 700, bounceDamping: 25 }}
+			dragElastic=     {.005}
+			drag
+		>
 			<img
 				src='./headshot.webp'
 				className='noSelect noDrag'
 				onLoad={e=>e.target.classList.add('loaded')}
 			/>
-		</div>
+		</m.div>
 	</div>
 }
 
