@@ -68,7 +68,7 @@ const HelloHeader = () => {
 				animate={aaa}
 				transition={{delay: window.homePageINterval*3}}
 			>
-				<Link to='mailto:mail@aznguy.com' target='_blank' rel='noopener noreferrer'>
+				<Link to='mailto:mail@erich-n.com' target='_blank' rel='noopener noreferrer'>
 					<div className='btn getInTouch'><i className="fa-solid fa-envelope"/> Get in Touch</div>
 				</Link>
 				<Link className='mav' to='https://docs.google.com/document/d/1eI5BVMny8-gmsmz8bVjm4aPngrAUwL432XSDlX34tdc/view' target='_blank' rel='noopener noreferrer'>
