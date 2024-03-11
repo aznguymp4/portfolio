@@ -11,7 +11,7 @@ const PageFooter = () => {
 	>
 		<div id='pageFooterTop'>
 			<div id='socials'>
-				<Link target='_blank' rel='noopener noreferrer' title='Contact Me' to='mailto:mail@aznguy.com'><i className='fa-solid fa-envelope'/></Link>
+				<Link target='_blank' rel='noopener noreferrer' title='Contact Me' to='mailto:mail@erich-n.com'><i className='fa-solid fa-envelope'/></Link>
 				<Link target='_blank' rel='noopener noreferrer' title='My GitHub' to='https://github.com/aznguymp4'><i className='fa-brands fa-github'/></Link>
 				<Link target='_blank' rel='noopener noreferrer' title='My LinkedIn' to='https://linkedin.com/in/erich-n/'><i className='fa-brands fa-linkedin'/></Link>
 				{/* <Link target='_blank' rel='noopener noreferrer' title='My Twitter' to='https://x.com/aznguymp4'><i className='fa-brands fa-x-twitter'/></Link> */}
