@@ -3,7 +3,7 @@
     left: -1000px;
   }
   100% {
-    left: 1000px;
+    left: 100vw;
   }
 }
 #CCCquote {
