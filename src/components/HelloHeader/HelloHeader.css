@@ -1,9 +1,11 @@
 @media screen and (max-width: 800px) {
+	#helloHeader {
+		padding: 0 20px !important;
+	}
 	#hi{
 		width: 100%;
-		padding-left: 0% !important;
-		padding-right: 0% !important;
-		padding: 10px 0 70px 0 !important;
+		padding: 10px 0 30px 0 !important;
+		padding: 0;
 		text-align: center;
 	}
 	#name{
@@ -38,10 +40,11 @@
 	#headerContactBtns {
 		justify-content: center;
 		grid-auto-flow: row !important;
+		margin-top: 80px !important;
 	}
 	#headerExtraSocials {
 		justify-content: center;
-		padding: 8px 0 !important;
+		padding: 4px 0 !important;
 	}
 	.getInTouch {
 		margin: auto;
