@@ -6,9 +6,7 @@
   </picture>
 </a>
 
-
 A portfolio for my personal projects, built with React.js, Redux, and Framer Motion.
 Supports light and dark theme. 🌗
-
 
 ## 🔆 [erich-n.com](https://erich-n.com)
