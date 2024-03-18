@@ -8,7 +8,9 @@ export const setFocus = (focus) => ({
   focus
 })
 
-if(!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark')
+const isDarkMode = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+if(!localStorage.getItem('theme')) localStorage.setItem('theme', isDarkMode()?'dark':'light')
 const initialState = {
   dark: localStorage.getItem('theme')==='dark',
   focus: document.hasFocus()
