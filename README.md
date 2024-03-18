@@ -1,4 +1,4 @@
-<a href="https://erich-n.com/">
+<a href="#">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aznguymp4/aznguymp4/main/header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aznguymp4/aznguymp4/main/header-light.svg" />
