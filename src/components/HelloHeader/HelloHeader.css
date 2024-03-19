@@ -107,6 +107,9 @@
 	margin-bottom: 20px;
 }
 
+#heyWave {
+	display: flex;
+}
 #waveEmoji {
 	vertical-align: middle;
 	width: 40px;

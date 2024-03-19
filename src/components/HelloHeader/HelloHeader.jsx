@@ -13,15 +13,10 @@ const HelloHeader = () => {
 					<m.div
 						initial={INitial}
 						animate={aaa}
+						id='heyWave'
 					>
-						Hey!
-						<m.img
-							id=        'waveEmoji'
-							className= 'prevent-select'
-							alt=       'high-five! :D'
-							src=       './icon/hi.webp'
-							draggable= 'false'
-							
+						<div>Hey!</div>
+						<m.div
 							initial=         {{ rotate: 45, scale: .5, opacity: 0, translate: '45% -25%' }}
 							animate=         {{ rotate: 0, scale: 1, opacity: 1, translate: '0% 0%' }}
 							transition=      {{ type: 'spring', stiffness: 300, damping: 16 }}
@@ -31,7 +26,19 @@ const HelloHeader = () => {
 							dragTransition=  {{ bounceStiffness: 700, bounceDamping: 25 }}
 							dragElastic=     {.005}
 							drag
-						/>
+							draggable= 'false'
+							id=        'waveEmoji'
+							className= 'prevent-select'
+							style={{height:'24px'}}
+						>
+							<img
+								src=       './icon/hi.webp'
+								className= 'prevent-select'
+								draggable= 'false'
+								width=     '40px'
+								style={{transform:'translateY(-8px)'}}
+							/>
+						</m.div>
 					</m.div>
 				</div>
 				<m.div
@@ -50,15 +57,15 @@ const HelloHeader = () => {
 				transition={{delay: window.homePageINterval*2}}
 			>
 				<div className='role noSelect noDrag'>
-					<img draggable='false' alt='Web development icon' src='./icon/dev.webp' className='roleIcon noSelect noDrag'/>
+					<img draggable='false' src='./icon/dev.webp' className='roleIcon noSelect noDrag'/>
 					<span>a software engineer.</span>
 				</div>
 				<div className='role noSelect noDrag'>
-					<img draggable='false' alt='Icon of a 3D Cube' src='./icon/game.webp' className='roleIcon noSelect noDrag'/>
+					<img draggable='false' src='./icon/game.webp' className='roleIcon noSelect noDrag'/>
 					<span>a game developer.</span>
 				</div>
 				<div className='role noSelect noDrag'>
-					<img draggable='false' alt='YouTube Logo' src='./icon/yt.svg' className='roleIcon noSelect noDrag'/>
+					<img draggable='false' src='./icon/yt.svg' className='roleIcon noSelect noDrag'/>
 					<span>a former content creator.</span>
 				</div>
 			</m.div>
