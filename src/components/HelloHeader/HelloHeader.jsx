@@ -88,8 +88,8 @@ const HelloHeader = () => {
 				animate={aaa}
 				transition={{delay: window.homePageINterval*4}}
 			>
-				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My GitHub' to='https://github.com/aznguymp4'><i className='fa-brands fa-github fa-lg'/></Link>
 				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My LinkedIn' to='https://linkedin.com/in/erich-n/'><i className='fa-brands fa-linkedin fa-lg'/></Link>
+				<Link className='o80' target='_blank' rel='noopener noreferrer' title='My GitHub' to='https://github.com/aznguymp4'><i className='fa-brands fa-github fa-lg'/></Link>
 			</m.div>
 		</div>
 		<m.div
