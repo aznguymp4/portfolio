@@ -1,5 +1,39 @@
 const ProjectList = [
   {
+    name: 'Spicy Violin',
+    dir: 'SpicyViolin',
+    url: 'https://spicyviolin.com',
+    icon: 'icon.svg',
+    iconLarge: 'icon.jpeg',
+    iconBg: '#ff333d',
+    imgs: [
+      {
+        src: 'homePage.mp4',
+        vid: 'video/mp4',
+        alt: 'Spicy Violin Home Page',
+        desc: 'Spicy Violin Home Page',
+        thumbTime: 0
+      },
+      {
+        src: 'bookingDemo.mp4',
+        vid: 'video/mp4',
+        alt: 'Spicy Violin Booking Demo',
+        desc: 'Demonstration of booking Spicy Violin. Apple Pay and Google Pay are available on mobile.',
+        thumbTime: 53.13
+      },
+      {
+        src: 'aboutPage.mp4',
+        vid: 'video/mp4',
+        alt: 'Spicy Violin About Page and FAQ',
+        desc: 'Spicy Violin About Page and FAQ',
+        thumbTime: 0
+      },
+    ],
+    desc: <div>
+      Full-stack site for booking live violin performances with instant pricing and availability quoting. Backend automatically checks performer’s schedule via Google Calendar API and calculates mileage pricing from venue distance. Users can book and pay directly on the site via Stripe API, supporting Apple Pay, Google Pay, etc.
+    </div>
+  },
+  {
     name: 'Pinteract',
     dir: 'Pinteract',
     url: 'https://pinteract.aznguy.com',

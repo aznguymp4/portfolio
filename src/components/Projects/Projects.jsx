@@ -66,7 +66,7 @@ const Projects = () => {
 						className='projectWindowRTabs'
 						variants={{
 							visible: {y:0, scaleY: 1},
-							hidden: {y:-48, scaleY: 0}
+							hidden: {y:-62, scaleY: 0}
 						}}
 						initial='hidden'
 						animate={rTabsOpen?'visible':'hidden'}
